@@ -16,7 +16,7 @@
 
 <p>
   <strong>Category:</strong>
-  <%= @task.category_id %>
+  <%= @categories.find(@task.category_id).title %>
 </p>
 
 <p>

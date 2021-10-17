@@ -10,17 +10,18 @@ class TasksController < ApplicationController
 
   # GET /tasks/1 or /tasks/1.json
   def show
+    @categories = Category
   end
 
   # GET /tasks/new
   def new
-    @task = Task.new
-    @categories = Category.all.collect { |m| [m.title, m.id] }
+    @task = current_user.Task.new
+    @categories = current_user.Category.all.collect { |m| [m.title, m.id] }
   end
 
   # GET /tasks/1/edit
   def edit
-    @categories = Category.all.collect { |m| [m.title, m.id] }
+    @categories = current_user.Category.all.collect { |m| [m.title, m.id] }
   end
 
   # POST /tasks or /tasks.json
