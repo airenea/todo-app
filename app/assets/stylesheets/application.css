@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+ @import 'rails_emoji_picker'
+
+  /*
+ *= require_tree .
+ *= require rails_emoji_picker
+ *= require bootstrap
+ *= require_self
+ */
