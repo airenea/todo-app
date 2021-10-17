@@ -13,10 +13,12 @@ class TasksController < ApplicationController
   # GET /tasks/new
   def new
     @task = Task.new
+    @categories = Category.all.collect { |m| [m.title, m.id] }
   end
 
   # GET /tasks/1/edit
   def edit
+    @categories = Category.all.collect { |m| [m.title, m.id] }
   end
 
   # POST /tasks or /tasks.json
@@ -64,6 +66,6 @@ class TasksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def task_params
-      params.require(:task).permit(:title, :body, :completion, :category_id)
+      params.require(:task).permit(:id, :title, :body, :completion, :category_id)
     end
 end
