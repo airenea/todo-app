@@ -1,5 +1,5 @@
 html {
-    background-color: #2d1a2a;
+    background-color: #372666;
 }
 
 html::after {
@@ -39,6 +39,7 @@ html::after {
     font-family: 'Nova Mono';
     font-size: 4vmin;
     margin-bottom: 1%;
+    color: #be438d;
 }
 
 .sign-field {
@@ -104,7 +105,7 @@ select:-webkit-autofill:focus {
     margin: auto;
     margin-bottom: 0.2%;
     font-size: 1rem;
-    color: #bc4863;
+    color: #88347c;
 }
 
 .sign-remember input {
@@ -118,7 +119,7 @@ select:-webkit-autofill:focus {
 }
 
 .sign-button {
-    background-color: #95374D;
+    background-color: #372666;
     border: none;
     color: white;
     padding: 2%;
@@ -131,7 +132,7 @@ select:-webkit-autofill:focus {
 }
 
 .sign-button-make {
-    background-color: #95374D;
+    background-color: #372666;
     border: none;
     color: white;
     padding: 2%;
@@ -145,7 +146,7 @@ select:-webkit-autofill:focus {
 }
 
 .sign-button input[type=submit] {
-    background-color: #95374D;
+    background-color: #372666;
     border: none;
     color: white;
     text-decoration: none;

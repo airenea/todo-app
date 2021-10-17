@@ -1,3 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap');
+
+html {
+    background-color: #2d1a2a;
+    font-family: 'Inconsolata';
+}
+
+html::after {
+  content: "";
+  background: url("genbackground.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  opacity: 0.55;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
+
+.gen-container {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: #ffffffe5;
+    padding: 2%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    margin: auto;
+    width: 80%;
+    font-family: 'Inconsolata'
+}
