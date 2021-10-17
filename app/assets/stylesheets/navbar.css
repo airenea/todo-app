@@ -1,0 +1,85 @@
+.navbar-sign {
+    position: fixed;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    width: 100%;
+    z-index:2;
+    padding: 3px;
+    margin-left: -10px;
+    margin-top: -10px;
+    height: 60px;
+    font-family: 'Inconsolata';
+    overflow: hidden;
+    background: linear-gradient(-45deg, #2d1a2a, #6b2b44, #bc4863, #efab9d);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+    text-align: center;
+}
+
+.navbar-gen {
+    position: fixed;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    width: 100%;
+    z-index:2;
+    padding: 3px;
+    margin-left: -10px;
+    margin-top: -10px;
+    height: 60px;
+    font-family: 'Inconsolata';
+    overflow: hidden;
+    background: linear-gradient(-45deg, #286150, #5b754f, #b83639, #8a2f31);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.navbar-under {
+    height: 60px;
+}
+
+.navbar-title {
+    font-family: 'Major Mono Display';
+    font-size: 4.5vmin;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.navbar-item {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #FFFFFF;
+    transition: 0.2s;
+}
+
+.navbar-item a:link {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.navbar-item a:visited {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.navbar-item a:hover {
+    color: #E8EDF6;
+    text-decoration: none;
+    text-shadow: 2px 2px 5px #8aa6cf;
+    font-weight: 800;
+}
