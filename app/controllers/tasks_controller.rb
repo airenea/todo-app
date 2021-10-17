@@ -3,7 +3,9 @@ class TasksController < ApplicationController
 
   # GET /tasks or /tasks.json
   def index
-    @tasks = Task.all
+    @tasks_today = Task.where(date: Date.today)
+    @tasks_tomorrow = Task.where(date: Date.today + 1)
+    @categories = Category
   end
 
   # GET /tasks/1 or /tasks/1.json
@@ -66,6 +68,6 @@ class TasksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def task_params
-      params.require(:task).permit(:id, :title, :body, :completion, :category_id)
+      params.require(:task).permit(:id, :title, :body, :completion, :category_id, :date)
     end
 end

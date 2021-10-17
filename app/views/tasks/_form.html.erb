@@ -28,7 +28,12 @@
 
   <div class="field">
     <%= form.label :category_id %>
-    <%= form.select :category, Category.all.collect {|p| [ p.title, p.title ] }, { :include_blank => "Please select" } %>
+    <%= form.select :category_id, Category.all.collect {|p| [ p.id ] }, { :include_blank => "Please select" } %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.date_select :date %>
   </div>
 
   <div class="actions">

@@ -1,5 +1,10 @@
 
 <p>
+<strong>ID:</strong>
+<%= @category.id %>
+</p>
+
+<p>
   <strong>Title:</strong>
   <%= @category.title %>
 </p>
@@ -8,6 +13,21 @@
   <strong>Body:</strong>
   <%= @category.body %>
 </p>
+
+<tbody>
+<% @tasks.each do |task| %>
+  <tr>
+    <td><%= task.title %></td>
+    <td><%= task.body %></td>
+    <td><%= task.completion %></td>
+    <td><%= task.category_id %></td>
+    <td><%= link_to 'Show', task %></td>
+    <td><%= link_to 'Edit', edit_task_path(task) %></td>
+    <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</tbody>
+
 
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>
