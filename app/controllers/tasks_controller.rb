@@ -6,12 +6,12 @@ class TasksController < ApplicationController
   def index
     @tasks_today = Task.where(date: Date.today).where(user: current_user.id)
     @tasks_tomorrow = Task.where(date: Date.today + 1).where(user: current_user.id)
-    @categories = Category.where(user: current_user.id)
+    @categories = Category
   end
 
   # GET /tasks/1 or /tasks/1.json
   def show
-    @categories = Category.where(user: current_user.id)
+    @categories = Category
   end
 
   # GET /tasks/new
