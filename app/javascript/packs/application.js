@@ -11,7 +11,3 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-
-//= require jquery
-//= require rails_emoji_picker
-//= require_tree .
