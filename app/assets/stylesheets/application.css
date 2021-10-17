@@ -57,6 +57,17 @@ html::after {
     cursor: default;
 }
 
+.gen-container-header-activeitem {
+    width: 15%;
+    text-align: center;
+    padding: 1%;
+    font-size: 2em;
+    text-align: center;
+    display: block;
+    cursor: default;
+    background-color: #751029c4
+}
+
 .gen-container-header-item :hover {
     background-color: #721639c4;
     cursor: pointer;

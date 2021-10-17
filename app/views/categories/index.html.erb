@@ -3,7 +3,7 @@
 <div class="gen-container">
 <div class="gen-container-header">
   <div class="gen-container-header-item">📋<div class="header-item-name"><a href="/tasks">Today</a></div></div>
-  <div class="gen-container-header-item">📂<div class="header-item-name"><a href="/categories">Categories</a></div></div>
+  <div class="gen-container-header-activeitem">📂<div class="header-item-name"><a href="/categories">Categories</a></div></div>
   <div class="gen-container-header-item">📝<div class="header-item-name""><a href="/tasks/new">New Task</a></div></div>
   <div class="gen-container-header-item">📦<div class="header-item-name"><a href="/categories/new">New Category</a></div></div>
 </div>
@@ -11,9 +11,10 @@
 <div class="categoryindex">
 <div class="categoryindex-all">
   <% @categories.each do |category| %>
-    <div class="taskindex-today-task">
-    <div class="taskindex-today-taskname"><%= category.emoji %> <strong><%= category.title.upcase %></strong></div>
-    <div class="taskindex-today-taskopt"><%= link_to '🔍', category %> <%= link_to '🖊', edit_category_path(category) %> <%= link_to '🗑', category, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+    <div class="categoryindex-cat">
+    <div class="categoryindex-cat-emoji"><%= category.emoji %></div>
+    <div class="categoryindex-cat-title"><strong><%= link_to category.title.upcase, category %></strong> (x<%= @tasks.where(category_id: category.id).count%>)</div>
+    <div class="categoryindex-cat-opts"><%= link_to '🔍', category %> <%= link_to '🖊', edit_category_path(category) %> <%= link_to '🗑', category, method: :delete, data: { confirm: 'Are you sure?' } %></div>
     </div>
   <% end %>
 </div>

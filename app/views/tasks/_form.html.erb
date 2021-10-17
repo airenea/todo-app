@@ -1,3 +1,5 @@
+<div class="form-container">
+<div class="form-form">
 <%= form_with(model: task) do |form| %>
   <% if task.errors.any? %>
     <div id="error_explanation">
@@ -11,36 +13,39 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="form-field">
+    <div class="form-param"><%= form.label :title %>
+    <div class="form-input"><%= form.text_field :title %>
   </div>
 
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body %>
+  <div class="form-field">
+    <div class="form-param"><%= form.label :body %>
+    <div class="form-input"><%= form.text_area :body %>
   </div>
 
-  <div class="field">
-    <%= form.label :completion %>
-    <%= form.check_box :completion %>
+  <div class="form-field">
+    <div class="form-param"><%= form.label :completion %>
+    <div class="form-input"><%= form.check_box :completion %>
   </div>
 
-  <div class="field">
-    <%= form.label :category_id %>
-    <%= form.select :category_id, Category.all.where(user: current_user.id).collect {|p| [ p.title, p.id ] }, { :include_blank => "Please select" } %>
+  <div class="form-field">
+    <div class="form-param"><%= form.label :category_id %>
+    <div class="form-input"><%= form.select :category_id, Category.all.where(user: current_user.id).collect {|p| [ p.title, p.id ] }, { :include_blank => "Please select" } %>
   </div>
 
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.date_select :date %>
+  <div class="form-field">
+    <div class="form-param"><%= form.label :date %>
+    <div class="form-input"><%= form.date_select :date %>
   </div>
 
-  <div class="field">
-  <%= form.number_field :user, id: :user_id, class:"form-control", value: current_user.id, type: :hidden %>
+  <div class="form-field">
+  <div class="form-param"><%= form.number_field :user, id: :user_id, class:"form-control", value: current_user.id, type: :hidden %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <div class="form-param"><%= form.submit %>
   </div>
 <% end %>
+</div>
+</div>
+
