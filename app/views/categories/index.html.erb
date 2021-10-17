@@ -1,31 +1,22 @@
 <%= stylesheet_link_tag 'allcat.css' %>
 
-<p id="notice"><%= notice %></p>
+<div class="gen-container">
+<div class="gen-container-header">
+  <div class="gen-container-header-item">📋<div class="header-item-name"><a href="/tasks">Today</a></div></div>
+  <div class="gen-container-header-item">📂<div class="header-item-name"><a href="/categories">Categories</a></div></div>
+  <div class="gen-container-header-item">📝<div class="header-item-name""><a href="/tasks/new">New Task</a></div></div>
+  <div class="gen-container-header-item">📦<div class="header-item-name"><a href="/categories/new">New Category</a></div></div>
+</div>
 
-<h1>Categories</h1>
+<div class="categoryindex">
+<div class="categoryindex-all">
+  <% @categories.each do |category| %>
+    <div class="taskindex-today-task">
+    <div class="taskindex-today-taskname"><%= category.emoji %> <strong><%= category.title.upcase %></strong></div>
+    <div class="taskindex-today-taskopt"><%= link_to '🔍', category %> <%= link_to '🖊', edit_category_path(category) %> <%= link_to '🗑', category, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+    </div>
+  <% end %>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @categories.each do |category| %>
-      <tr>
-        <td><%= category.title %></td>
-        <td><%= category.body %></td>
-        <td><%= link_to 'Show', category %></td>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Category', new_category_path %>
+</div>
+</div>

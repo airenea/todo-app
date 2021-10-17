@@ -1,5 +1,24 @@
 <%= stylesheet_link_tag 'alltask.css' %>
 
+<%
+arr_quote = [
+  "Change the world by being yourself.",
+  "Everything you can imagine is real.",
+  "Whatever you do, do it well.",
+  "What we think, we become.",
+  "All limitations are self-imposed.",
+  "Tough times never last but tough people do.",
+  "Be so good they can’t ignore you.",
+  "Yesterday you said tomorrow.",
+  "To live will be an awfully big adventure.",
+  "And still, I rise.",
+  "Turn your wounds into wisdom.",
+  "It hurt because it mattered.",
+  "The meaning of life is to give life meaning.",
+  "I have nothing to lose but something to gain."
+]
+%>
+
 <div class="gen-container">
 <div class="gen-container-header">
   <div class="gen-container-header-item">📋<div class="header-item-name"><a href="/tasks">Today</a></div></div>
@@ -9,69 +28,49 @@
 </div>
 
 <div class="taskindex">
-<div class="date-welcome"><%= Date.today%></div>
-<div class="todays-tasks">
-  <table>
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Body</th>
-        <th>Completion</th>
-        <th>Category</th>
-        <th>Date</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @tasks_today.each do |task| %>
-        <tr>
-          <td><%= task.title %></td>
-          <td><%= task.body %></td>
-          <td><%= task.completion %></td>
-          <td><%= @categories.find(task.category_id).title %></td>
-          <td><%= task.date %></td>
-          <td><%= link_to 'Show', task %></td>
-          <td><%= link_to 'Edit', edit_task_path(task) %></td>
-          <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
-<div class="other-tasks">
-  <table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th>Completion</th>
-      <th>Category</th>
-      <th>Date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @tasks_future.each do |task| %>
-      <tr>
-        <td><%= task.title %></td>
-        <td><%= task.body %></td>
-        <td><%= task.completion %></td>
-        <td><%= @categories.find(task.category_id).title %></td>
-        <td><%= task.date %></td>
-        <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-  </table>
+<div class="taskindex-welcome">
+  <div class="taskindex-welcome-date"><%= Date.today%></div>
+  <div class="taskindex-welcome-quote"><%= arr_quote[rand(arr_quote.length-1)].downcase%></div>
 </div>
 
-<br>
+<div class="taskindex-today">
+  <% @tasks_today.each do |task| %>
+  <% 
+    check = '⭕️'
+    text_color = '#6b2b44';
+    text_decor = 'none';
+    if task.completion == true
+      check = '✅'
+      text_color = '#553F47'
+      text_decor = 'line-through';
+    else
+    end
+  %>
+    <div class="taskindex-today-task">
+    <div class="taskindex-today-taskname"><%= check %> <%= @categories.find(task.category_id).emoji %> <strong><span style="color: <%=text_color%>; text-decoration: <%=text_decor%>;"><%= task.title.upcase %></span></strong></div>
+    <div class="taskindex-today-taskopt"><%= link_to '🔍', task %> <%= link_to '🖊', edit_task_path(task) %> <%= link_to '🗑', task, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+    </div>
+  <% end %>
+</div>
 
-<%= link_to 'New Task', new_task_path %>
-<%= link_to 'New Category', new_category_path %>
+<div class="taskindex-other">
+  <% @tasks_future.each do |task| %>
+  <% 
+    check = '⭕️'
+    text_color = '#6b2b44';
+    text_decor = 'none';
+    if task.completion == true
+      check = '✅'
+      text_color = '#553F47'
+      text_decor = 'line-through';
+    else
+    end
+  %>
+    <div class="taskindex-other-task">
+    <div class="taskindex-other-taskname"><%= @categories.find(task.category_id).emoji %> <strong><span style="color: <%=text_color%>; text-decoration: <%=text_decor%>;"><%= task.title.upcase %></span></strong> <%= task.date %></div>
+    <div class="taskindex-other-taskopt"><%= link_to '🔍', task %></div>
+    </div>
+  <% end %>
+</div>
 </div>
 </div>

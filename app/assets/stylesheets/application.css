@@ -25,7 +25,7 @@ html::after {
 .gen-container {
     margin: 0;
     position: absolute;
-    top: 55%;
+    top: 50%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -33,7 +33,7 @@ html::after {
     margin: auto;
     width: 80%;
     font-family: 'Inconsolata';
-    height: 70%;
+    height: 72%;
 }
 
 .gen-container-header {
@@ -71,4 +71,21 @@ html::after {
 .gen-container-body {
     padding: 1.5%;
     padding-top: 0;
+}
+
+.header-item-name a:link {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.header-item-name a:visited {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.header-item-name a:hover {
+    color: #E8EDF6;
+    text-decoration: none;
+    text-shadow: 2px 2px 5px #efab9d;
+    font-weight: 800;
 }
