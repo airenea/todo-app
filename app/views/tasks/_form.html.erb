@@ -36,6 +36,10 @@
     <%= form.date_select :date %>
   </div>
 
+  <div class="field">
+  <%= form.number_field :user, id: :user_id, class:"form-control", value: current_user.id, type: :hidden %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

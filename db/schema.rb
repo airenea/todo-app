@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_17_022807) do
+ActiveRecord::Schema.define(version: 2021_10_17_064500) do
 
   create_table "categories", force: :cascade do |t|
     t.string "title"
     t.text "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user"
   end
 
   create_table "tasks", force: :cascade do |t|
@@ -29,6 +30,7 @@ ActiveRecord::Schema.define(version: 2021_10_17_022807) do
     t.string "fieldname"
     t.string "tasks"
     t.date "date"
+    t.integer "user"
     t.index ["category_id"], name: "index_tasks_on_category_id"
   end
 
@@ -40,6 +42,8 @@ ActiveRecord::Schema.define(version: 2021_10_17_022807) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.string "surname"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

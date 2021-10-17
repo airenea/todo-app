@@ -3,30 +3,30 @@ class TasksController < ApplicationController
 
   # GET /tasks or /tasks.json
   def index
-    @tasks_today = Task.where(date: Date.today)
-    @tasks_tomorrow = Task.where(date: Date.today + 1)
-    @categories = Category
+    @tasks_today = Task.where(date: Date.today).where(user: current_user.id)
+    @tasks_tomorrow = Task.where(date: Date.today + 1).where(user: current_user.id)
+    @categories = Category.where(user: current_user.id)
   end
 
   # GET /tasks/1 or /tasks/1.json
   def show
-    @categories = Category
+    @categories = Category.where(user: current_user.id)
   end
 
   # GET /tasks/new
   def new
-    @task = current_user.Task.new
-    @categories = current_user.Category.all.collect { |m| [m.title, m.id] }
+    @task = Task.new
+    @categories = Category.all.where(user: current_user.id).collect { |m| [m.title, m.id] }
   end
 
   # GET /tasks/1/edit
   def edit
-    @categories = current_user.Category.all.collect { |m| [m.title, m.id] }
+    @categories = Category.all.where(user: current_user.id).collect { |m| [m.title, m.id] }
   end
 
   # POST /tasks or /tasks.json
   def create
-    @task = Task.new(task_params)
+    @task = Task.where(user: current_user.id).new(task_params)
 
     respond_to do |format|
       if @task.save
@@ -69,6 +69,6 @@ class TasksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def task_params
-      params.require(:task).permit(:id, :title, :body, :completion, :category_id, :date)
+      params.require(:task).permit(:id, :title, :body, :completion, :user, :category_id, :date)
     end
 end
