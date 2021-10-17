@@ -1,0 +1,15 @@
+.taskindex {
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1.3fr 0.7fr; 
+    grid-template-rows: 0.4fr 1.6fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "date-welcome other-tasks"
+      "todays-tasks other-tasks"; 
+    width: 101.5%; 
+    height: 100%; 
+  }
+  .date-welcome { grid-area: date-welcome; }
+  .other-tasks { grid-area: other-tasks; }
+  .todays-tasks { grid-area: todays-tasks; }  

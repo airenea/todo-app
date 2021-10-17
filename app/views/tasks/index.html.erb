@@ -1,11 +1,46 @@
 <%= stylesheet_link_tag 'alltask.css' %>
 
-<p id="notice"><%= notice %></p>
+<div class="gen-container">
+<div class="gen-container-header">
+  <div class="gen-container-header-item">📋<div class="header-item-name"><a href="/tasks">Today</a></div></div>
+  <div class="gen-container-header-item">📂<div class="header-item-name"><a href="/categories">Categories</a></div></div>
+  <div class="gen-container-header-item">📝<div class="header-item-name""><a href="/tasks/new">New Task</a></div></div>
+  <div class="gen-container-header-item">📦<div class="header-item-name"><a href="/categories/new">New Category</a></div></div>
+</div>
 
-<%= Date.today%>
-<h1>Tasks</h1>
+<div class="taskindex">
+<div class="date-welcome"><%= Date.today%></div>
+<div class="todays-tasks">
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Body</th>
+        <th>Completion</th>
+        <th>Category</th>
+        <th>Date</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
 
-<table>
+    <tbody>
+      <% @tasks_today.each do |task| %>
+        <tr>
+          <td><%= task.title %></td>
+          <td><%= task.body %></td>
+          <td><%= task.completion %></td>
+          <td><%= @categories.find(task.category_id).title %></td>
+          <td><%= task.date %></td>
+          <td><%= link_to 'Show', task %></td>
+          <td><%= link_to 'Edit', edit_task_path(task) %></td>
+          <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="other-tasks">
+  <table>
   <thead>
     <tr>
       <th>Title</th>
@@ -18,7 +53,7 @@
   </thead>
 
   <tbody>
-    <% @tasks_today.each do |task| %>
+    <% @tasks_future.each do |task| %>
       <tr>
         <td><%= task.title %></td>
         <td><%= task.body %></td>
@@ -31,10 +66,12 @@
       </tr>
     <% end %>
   </tbody>
-</table>
+  </table>
+</div>
 
 <br>
 
 <%= link_to 'New Task', new_task_path %>
 <%= link_to 'New Category', new_category_path %>
-
+</div>
+</div>

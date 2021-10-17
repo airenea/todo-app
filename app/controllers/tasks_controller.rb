@@ -5,8 +5,9 @@ class TasksController < ApplicationController
   # GET /tasks or /tasks.json
   def index
     @tasks_today = Task.where(date: Date.today).where(user: current_user.id)
-    @tasks_tomorrow = Task.where(date: Date.today + 1).where(user: current_user.id)
+    @tasks_future = Task.where("date > ?", Date.today).where(user: current_user.id)
     @categories = Category
+    @tasks = Task.all
   end
 
   # GET /tasks/1 or /tasks/1.json
