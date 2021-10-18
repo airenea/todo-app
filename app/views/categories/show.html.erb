@@ -20,7 +20,7 @@
 
 <div class="catindiv">
 <div class="catindiv-title"><%= @category.title.downcase %> <%= @category.emoji %></div>
-<div class="catindiv-body"><%= @category.body %></div>
+<div class="catindiv-body"><%=simple_format(@category.body).html_safe %></div>
 <div class="catindiv-tasks">
   <% @tasks.each do |task| %>
   <% 
