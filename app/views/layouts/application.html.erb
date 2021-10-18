@@ -31,10 +31,10 @@
   <div class="navbar-under">.</div>
 
   <% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
+  <div class="gen-alert-notice"><div class="gen-alert-text"><%= notice %></div></div>
   <% end %>
   <% if alert %>
-    <p class="alert alert-danger"><%= alert %></p>
+  <div class="gen-alert-error"><div class="gen-alert-text"><%= alert %></div></div>
   <% end %>
     <%= yield %>
   </body>

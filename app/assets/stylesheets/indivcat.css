@@ -104,9 +104,10 @@
     font-family: 'Nova Mono';
     height: 10vh;
     background-color: #ffffffcb;
-    padding: 1%;
+    padding: 1.5%;
     margin-bottom: 1%;
     overflow: scroll;
+    font-size: 0.9rem;
 }
 
 .form-button-make {
@@ -147,7 +148,6 @@
 .form-button-align {
     display: flex;
     justify-content: center;
-    margin-top: 1%;
 }
 
 a:link {

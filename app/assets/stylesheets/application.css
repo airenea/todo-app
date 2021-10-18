@@ -33,7 +33,7 @@ html::after {
     margin: auto;
     width: 80vw;
     font-family: 'Inconsolata';
-    height: 72vh;
+    height: 74vh;
 }
 
 .gen-container-header {
@@ -101,6 +101,75 @@ a:hover {
     font-weight: 800;
 }
 
-.error {
-    background-color: orange;
+.gen-alert-notice {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: #4C1673;
+    color: #FFFFFF;
+    margin: auto;
+    width: 50vmin;
+    font-family: 'Nova Mono';
+    height: 20vmin;    
+    -moz-animation: cssAnimation 0.2s ease-in 1s forwards;
+    -webkit-animation: cssAnimation 0.2s ease-in 1s forwards;
+    -o-animation: cssAnimation 0.2s ease-in 1s forwards;
+    animation: cssAnimation 0.2s ease-in 1s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    z-index: 5;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.gen-alert-error {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: #8A1A45;
+    color: #FFFFFF;
+    margin: auto;
+    width: 50vmin;
+    font-family: 'Nova Mono';
+    height: 20vmin;    
+    -moz-animation: cssAnimation 0.2s ease-in 1s forwards;
+    -webkit-animation: cssAnimation 0.2s ease-in 1s forwards;
+    -o-animation: cssAnimation 0.2s ease-in 1s forwards;
+    animation: cssAnimation 0.2s ease-in 1s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    z-index: 5;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.gen-alert-text {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin: auto;
+}
+
+@keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        overflow:hidden;
+    }
+}
+@-webkit-keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        visibility:hidden;
+    }
 }

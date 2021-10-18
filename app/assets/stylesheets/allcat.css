@@ -21,11 +21,13 @@
 .categoryindex-cat-emoji {
     margin-top: 3vmin;
     font-size: 3.0em;
+    cursor: default;
 }
 
 .categoryindex-cat-title {
     margin-top: -0.75vmin;
     font-size: 0.8em;
+    cursor: default;
 }
 
 .categoryindex-cat-opts {

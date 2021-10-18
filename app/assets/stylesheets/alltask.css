@@ -27,11 +27,25 @@
 }
 
 .taskindex-welcome-barleft { 
-    background-color: #A01F50;
+    background: linear-gradient(-35deg, #A22A46, #209720, #bc4863, #43AF43);
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
     height: 1.5vh;
     margin-top: 1.7vh;
     margin-left: 1%;
 }
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+} 
 
 .taskindex-welcome-barright { 
     background-color: #000000;
@@ -66,7 +80,7 @@
 }
 
 .taskindex-today-taskname {
-    color: #6b2b44;
+    color: #CD2767;
     width: 35vw;
     margin-left: 1%;
 }
@@ -109,7 +123,7 @@
 }
 
 .taskindex-other-taskname {
-    color: #6b2b44;
+    color: #A22A46;
     width: 23vw;
     margin-left: 1%;
 }

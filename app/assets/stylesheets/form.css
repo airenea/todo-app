@@ -125,7 +125,6 @@ select:-webkit-autofill:focus {
 .form-button-align {
     display: flex;
     justify-content: center;
-    margin-top: 2%;
 }
 
 .form-button {
