@@ -149,3 +149,18 @@
     justify-content: center;
     margin-top: 1%;
 }
+
+a:link {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-shadow: 2px 2px 5px #efab9d;
+    text-decoration: none;
+}

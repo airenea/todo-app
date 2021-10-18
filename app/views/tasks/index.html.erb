@@ -54,6 +54,7 @@ arr_quote = [
 </div>
 
 <div class="taskindex-other">
+<div class="taskindex-list">
   <% @tasks_future.each do |task| %>
   <% 
     check = '⭕️'
@@ -71,6 +72,8 @@ arr_quote = [
     <div class="taskindex-other-taskopt"><%= link_to '🔍', task %></div>
     </div>
   <% end %>
+</div>
+<div class="taskindex-other-header">Other Tasks</div>
 </div>
 </div>
 </div>

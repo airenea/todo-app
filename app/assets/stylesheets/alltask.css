@@ -59,7 +59,24 @@
     padding: 2%;
     padding-top: 0;
     font-size: 0.8em;
+}
+
+.taskindex-list { 
     overflow: scroll;
+    width: 25vw;
+    height: 50vh;
+    background-color: #efe9ff79;
+}
+
+.taskindex-other-header { 
+    width: 25vw;
+    height: 5vh;
+    background-color: #372666;
+    text-align: center;
+    padding-top: 1.8vh;
+    color: #FFFFFF;
+    font-size: 1.4em;
+    font-family: 'Nova Mono';
 }
 
 .taskindex-other-task {
