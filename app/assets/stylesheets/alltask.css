@@ -71,6 +71,7 @@
     padding: 2%;
     padding-top: 0;
     overflow: scroll;
+    height: 44vh;
 }
 
 .taskindex-today-task {
