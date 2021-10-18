@@ -13,7 +13,7 @@
   <% @categories.each do |category| %>
     <div class="categoryindex-cat">
     <div class="categoryindex-cat-emoji"><%= category.emoji %></div>
-    <div class="categoryindex-cat-title"><strong><%= link_to category.title.upcase, category %></strong> (x<%= @tasks.where(category_id: category.id).count%>)</div>
+    <div class="categoryindex-cat-title"><strong><%= link_to category.title.upcase, category %></strong> (x<%= @tasks.where(category_id: category.id).where(completion: false).count%>)</div>
     <div class="categoryindex-cat-opts"><%= link_to '🔍', category %> <%= link_to '🖊', edit_category_path(category) %> <%= link_to '🗑', category, method: :delete, data: { confirm: 'Are you sure?' } %></div>
     </div>
   <% end %>

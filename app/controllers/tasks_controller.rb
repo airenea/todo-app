@@ -4,18 +4,18 @@ class TasksController < ApplicationController
 
   # GET /tasks or /tasks.json
   def index
-    @tasks_today = Task.where(date: Date.today).where(user: current_user.id)
-    @tasks_future = Task.where("date > ?", Date.today).where(user: current_user.id)
+    @tasks_today = Task.where(date: Date.today).where(user: current_user.id).order("completion ASC").order("date ASC").order("category_id ASC")
+    @tasks_future = Task.where("date > ?", Date.today).where(user: current_user.id).order("completion ASC").order("date ASC").order("category_id ASC")
     @categories = Category
-    @tasks = Task.all
+    @tasks = Task.all.order("completion ASC").order("date ASC").order("category_id ASC")
   end
 
   # GET /tasks/1 or /tasks/1.json
   def show
     @categories = Category
-    @tasks_today = Task.where(date: Date.today).where(user: current_user.id)
-    @tasks_future = Task.where("date > ?", Date.today).where(user: current_user.id)
-    @tasks = Task.all
+    @tasks_today = Task.where(date: Date.today).where(user: current_user.id).order("completion ASC").order("date ASC").order("category_id ASC")
+    @tasks_future = Task.where("date > ?", Date.today).where(user: current_user.id).order("completion ASC").order("date ASC").order("category_id ASC")
+    @tasks = Task.all.order("completion ASC").order("date ASC").order("category_id ASC")
   end
 
   # GET /tasks/new

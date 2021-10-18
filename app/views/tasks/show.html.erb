@@ -29,10 +29,24 @@ arr_quote = [
   <div class="gen-container-header-item">📦<div class="header-item-name"><a href="/categories/new">New Category</a></div></div>
 </div>
 
+<%
+congrats = 'IN PROGRESS!'
+today_done = @tasks_today.where(completion: true).count.to_f
+today_total = @tasks_today.count.to_f
+today_fraction = today_done/today_total
+today_progress = (number_with_precision(today_fraction, :precision => 6).to_f*15)
+today_progressleft = today_progress.to_s + 'vw'
+today_progressright = (15 - today_progress).to_s + 'vw'
+if today_progress == 15
+  congrats = 'LEVEL COMPLETE!'
+else
+end
+%>
+
 <div class="taskindex">
 <div class="taskindex-welcome">
-  <div class="taskindex-welcome-date"><%= Date.today%></div>
-  <div class="taskindex-welcome-quote"><%= arr_quote[rand(arr_quote.length-1)].downcase%></div>
+<div class="taskindex-welcome-date"><%= Date.today%><div style="width: <%=today_progressleft%>;" class="taskindex-welcome-barleft"></div><div style="width: <%=today_progressright%>;" class="taskindex-welcome-barright"></div><div class="taskindex-welcome-congrats"><%= congrats%></div></div>
+<div class="taskindex-welcome-quote"><%= arr_quote[rand(arr_quote.length-1)].downcase%></div>
 </div>
 
 <div class="taskindex-today">
@@ -74,7 +88,7 @@ arr_quote = [
     <div class="taskindiv-title"><%= check %>  <%= @task.title.downcase %></div>
     <div class="taskindiv-category"><%= @categories.find(@task.category_id).title %> <%= @categories.find(@task.category_id).emoji %><%= @categories.find(@task.category_id).emoji %><%= @categories.find(@task.category_id).emoji %></div>
     </div>
-    <div class="taskindiv-body"><%= @task.body %></div>
+    <div class="taskindiv-body"><%=simple_format(@task.body).html_safe %></div>
     <div class="taskindiv-opts"><%= link_to '🖊', edit_task_path(@task) %> <%= link_to '🗑', @task, method: :delete, data: { confirm: 'Are you sure?' } %> <%= link_to '🔙', tasks_path %></div>
     </div>
     </div>

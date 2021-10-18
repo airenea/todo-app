@@ -23,6 +23,28 @@
 .taskindex-welcome-date { 
     color: #721639;
     font-family: 'Nova Mono';
+    display: flex;
+}
+
+.taskindex-welcome-barleft { 
+    background-color: #A01F50;
+    height: 1.5vh;
+    margin-top: 1.7vh;
+    margin-left: 1%;
+}
+
+.taskindex-welcome-barright { 
+    background-color: #000000;
+    height: 1.5vh;
+    margin-top: 1.7vh;
+}
+
+.taskindex-welcome-congrats { 
+    color: #000000;
+    font-size: 0.8rem;
+    font-family: 'Nova Mono';
+    margin-top: 1.1vh;
+    margin-left: 1%;
 }
 
 .taskindex-welcome-quote { 
