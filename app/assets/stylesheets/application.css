@@ -33,7 +33,7 @@ html::after {
     margin: auto;
     width: 80vw;
     font-family: 'Inconsolata';
-    height: 72%;
+    height: 72vh;
 }
 
 .gen-container-header {

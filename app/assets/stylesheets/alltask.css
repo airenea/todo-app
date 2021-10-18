@@ -58,11 +58,6 @@
 .taskindex-other { 
     padding: 2%;
     padding-top: 0;
-}
-
-.taskindex-other { 
-    padding: 2%;
-    padding-top: 0;
     font-size: 0.8em;
     overflow: scroll;
 }

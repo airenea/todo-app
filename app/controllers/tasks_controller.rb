@@ -13,6 +13,9 @@ class TasksController < ApplicationController
   # GET /tasks/1 or /tasks/1.json
   def show
     @categories = Category
+    @tasks_today = Task.where(date: Date.today).where(user: current_user.id)
+    @tasks_future = Task.where("date > ?", Date.today).where(user: current_user.id)
+    @tasks = Task.all
   end
 
   # GET /tasks/new
