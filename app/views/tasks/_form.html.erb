@@ -2,15 +2,14 @@
 <div class="form-form">
 <%= form_with(model: task) do |form| %>
   <% if task.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
-
+    <div class="form-alert-error"><div style="font-family: 'Nova Mono'; padding: 3%;'">Sorry!</div>
       <ul>
         <% task.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
-    </div>
+      <div style="font-family: 'Nova Mono'; padding: 3%;">Try again!</div>
+    </div> 
   <% end %>
 
   <div class="form-field">

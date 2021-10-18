@@ -2,17 +2,13 @@
 <div class="form-form">
 <%= form_with(model: category) do |form| %>
   <% if category.errors.any? %>
-   %>
-
-  
-    <div id="error_explanation">
-      <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
-
+    <div class="form-alert-error"><div style="font-family: 'Nova Mono'; padding: 3%;'">Sorry!</div>
       <ul>
         <% category.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
+      <div style="font-family: 'Nova Mono'; padding: 3%;">Try again!</div>
     </div>
   <% end %>
 

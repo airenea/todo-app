@@ -101,13 +101,15 @@
 }
 
 .catindiv-body {
-    font-family: 'Nova Mono';
+    font-family: 'Inconsolata';
     height: 10vh;
     background-color: #ffffffcb;
     padding: 1.5%;
     margin-bottom: 1%;
     overflow: scroll;
     font-size: 0.9rem;
+    text-align: justify;
+    line-height: 0.9rem;
 }
 
 .form-button-make {

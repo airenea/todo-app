@@ -18,7 +18,6 @@ class CategoriesController < ApplicationController
   # GET /categories/new
   def new
     @category = Category.where(user: current_user.id).new
-
   end
 
   # GET /categories/1/edit

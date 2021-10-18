@@ -33,7 +33,7 @@ html::after {
     margin: auto;
     width: 80vw;
     font-family: 'Inconsolata';
-    height: 74vh;
+    height: 73vh;
 }
 
 .gen-container-header {
@@ -146,6 +146,29 @@ a:hover {
     animation-fill-mode: forwards;
     z-index: 5;
     text-align: center;
+    font-size: 0.8rem;
+}
+
+.form-alert-error {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: #8A1A45;
+    color: #FFFFFF;
+    margin: auto;
+    width: 50vmin;
+    font-family: 'Inconsolata';
+    height: fit-content;    
+    -moz-animation: cssAnimation 0s ease-in 3s forwards;
+    -webkit-animation: cssAnimation 0s ease-in 3s forwards;
+    -o-animation: cssAnimation 0s ease-in 3s forwards;
+    animation: cssAnimation 0s ease-in 3s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    z-index: 5;
     font-size: 0.8rem;
 }
 

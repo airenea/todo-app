@@ -28,13 +28,14 @@ arr_quote = [
 </div>
 
 <%
-congrats = 'IN PROGRESS!'
 today_done = @tasks_today.where(completion: true).count.to_f
 today_total = @tasks_today.count.to_f
 today_fraction = today_done/today_total
 today_progress = (number_with_precision(today_fraction, :precision => 6).to_f*15)
 today_progressleft = today_progress.to_s + 'vw'
 today_progressright = (15 - today_progress).to_s + 'vw'
+percent_done = today_fraction * 100
+congrats = (number_with_precision(percent_done, :precision => 2)).to_s + '%' + ' (' + today_done.to_s + ' out of ' + today_total.to_s + ')'
 if today_progress == 15
   congrats = 'LEVEL COMPLETE!'
 else
