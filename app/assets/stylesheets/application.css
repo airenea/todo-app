@@ -31,7 +31,7 @@ html::after {
     transform: translate(-50%, -50%);
     background-color: #ffffffcb;
     margin: auto;
-    width: 80%;
+    width: 80vw;
     font-family: 'Inconsolata';
     height: 72%;
 }
