@@ -16,9 +16,9 @@
   <body>
   <% if user_signed_in? %>
     <nav class="navbar-gen">
-      <div class="navbar-title" style="font-size: 3.75vmin; margin-left: 1.5%;">ready planner one</div>
+      <div class="navbar-title" style="font-size: 3.75vmin; margin-left: 1.5%;"><a href="/">ready planner one</a></div>
         <div class="navbar-user">
-          🎮 <%= current_user.name %> | 
+          🎮 <a href="/"><%= current_user.name %></a> | 
           <%= link_to '🔧', edit_user_registration_path, :class => 'navbar-link' %>
           <%= link_to '🔚', destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
         </div>

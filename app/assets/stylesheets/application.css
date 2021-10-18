@@ -84,19 +84,23 @@ html::after {
     padding-top: 0;
 }
 
-.header-item-name a:link {
+a:link {
     color: #FFFFFF;
     text-decoration: none;
 }
 
-.header-item-name a:visited {
+a:visited {
     color: #FFFFFF;
     text-decoration: none;
 }
 
-.header-item-name a:hover {
+a:hover {
     color: #E8EDF6;
     text-decoration: none;
     text-shadow: 2px 2px 5px #efab9d;
     font-weight: 800;
+}
+
+.error {
+    background-color: orange;
 }
